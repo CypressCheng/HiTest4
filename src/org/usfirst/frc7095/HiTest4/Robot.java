@@ -18,6 +18,7 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.CameraServer;
+import edu.wpi.cscore.UsbCamera;
 import org.usfirst.frc7095.HiTest4.commands.*;
 import org.usfirst.frc7095.HiTest4.subsystems.*;
 
@@ -40,8 +41,12 @@ public class Robot extends TimedRobot {
         oi = new OI();
         chooser.addDefault("Autonomous Command", new AutonomousCommand());
         SmartDashboard.putData("Auto mode", chooser);
-        CameraServer.getInstance().startAutomaticCapture(0).setResolution(1280, 720);//.setFPS(30);
-        CameraServer.getInstance().startAutomaticCapture(1).setResolution(1280, 720);//.setFPS(30);
+        UsbCamera cam0 = CameraServer.getInstance().startAutomaticCapture(0);
+        cam0.setResolution(1280, 720);
+        cam0.setFPS(30);
+        UsbCamera cam1 = CameraServer.getInstance().startAutomaticCapture(1);
+        cam1.setResolution(1280, 720);
+        cam1.setFPS(30);
     }
 
     @Override
