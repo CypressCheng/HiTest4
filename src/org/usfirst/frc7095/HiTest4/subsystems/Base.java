@@ -42,5 +42,9 @@ public class Base extends Subsystem {
     public void driveStraight(double speed) {
     	baseDrive.tankDrive(speed, speed);
     }
+    
+    public void stop() {
+    	baseDrive.stopMotor();
+    }
 }
 

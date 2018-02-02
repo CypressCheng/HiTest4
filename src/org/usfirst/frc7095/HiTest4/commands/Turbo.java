@@ -36,7 +36,7 @@ public class Turbo extends Command {
 
     @Override
     protected void end() {
-    	Robot.base.driveStraight(0);
+    	Robot.base.stop();
     }
 
     @Override

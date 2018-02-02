@@ -14,6 +14,8 @@ import org.usfirst.frc7095.HiTest4.Robot;
 
 public class AutonomousCommand extends Command {
     public AutonomousCommand() {
+    	requires(Robot.base);
+    	requires(Robot.sucker);
     }
 
     @Override
@@ -31,9 +33,11 @@ public class AutonomousCommand extends Command {
 
     @Override
     protected void end() {
+    	Robot.base.driveStraight(0);
     }
 
     @Override
     protected void interrupted() {
+    	end();
     }
 }
