@@ -25,6 +25,7 @@ public class TurboReverse extends Command {
     @Override
     protected void execute() {
     	Robot.base.drive((-1 * Robot.oi.getLeftYVelocity()), (-1 * Robot.oi.getRightYVelocity()));
+    	//Robot.base.drive(Math.pow(-1 * Robot.oi.getLeftYVelocity(),3), Math.pow(-1 * Robot.oi.getRightYVelocity(), 3));//Added ^3 method to prevent accident.
     }
 
     @Override

@@ -24,6 +24,7 @@ public class CruiseReverse extends Command {
     @Override
     protected void execute() {
     	Robot.base.drive((-0.5 * Robot.oi.getLeftYVelocity()), (-0.5 * Robot.oi.getRightYVelocity()));
+    	//Robot.base.drive(Math.pow(-0.5 * Robot.oi.getLeftYVelocity(),3), Math.pow(-0.5 * Robot.oi.getRightYVelocity(), 3));//Added ^3 method to prevent accident.
     }
 
     @Override

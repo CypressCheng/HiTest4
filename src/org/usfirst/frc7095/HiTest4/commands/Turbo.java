@@ -26,6 +26,7 @@ public class Turbo extends Command {
     @Override
     protected void execute() {
     	Robot.base.drive(Robot.oi.getLeftYVelocity(), Robot.oi.getRightYVelocity());
+    	//Robot.base.drive(Math.pow(Robot.oi.getLeftYVelocity(),3), Math.pow(Robot.oi.getRightYVelocity(), 3));//Added ^3 method to prevent accident.
     }
 
     @Override
